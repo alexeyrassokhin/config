@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: ssj-ui-backend
+  datasource:
+    username: ssj_dev
+    password: ssj_dev_pwd
+    url: jdbc:postgresql://192.168.44.21/ssj_dev?currentSchema=ssj
