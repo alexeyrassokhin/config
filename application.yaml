@@ -50,6 +50,4 @@ management:
         enabled: true
 
 spectrum:
-  sec-srv-url: http://sec.main.dev.k8s.it-spectrum.ru
-  email-srv-url: http://email.main.dev.k8s.it-spectrum.ru
   enableRestAccessControl: true

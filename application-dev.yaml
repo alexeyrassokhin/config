@@ -1,0 +1,15 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          email-service:
+            client-id: email-service
+            client-secret: 4moxUiwEmwb1984szjH9oCsJlsPZyG9U
+            authorization-grant-type: client_credentials
+        provider:
+          email-service:
+            token-uri: http://kk2.it-spectrum.ru/realms/asv/protocol/openid-connect/token
+spectrum:
+  sec-srv-url: http://sec.main.dev.k8s.it-spectrum.ru
+  email-srv-url: http://email.main.dev.k8s.it-spectrum.ru
