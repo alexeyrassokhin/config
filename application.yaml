@@ -1,0 +1,55 @@
+spring:
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${keycloak.auth-server-url}/realms/${keycloak.realm}
+          jwk-set-uri: ${keycloak.auth-server-url}/realms/${keycloak.realm}/protocol/openid-connect/certs
+  flyway:
+    out-of-order: true
+    validate-on-migrate: false
+
+keycloak:
+  auth-server-url: http://kk2.it-spectrum.ru
+  realm: asv
+  client-id: asva-app
+
+
+logging:
+  file:
+    path: /var/logs/${spring.application.name}
+  logback:
+    rollingpolicy:
+      max-file-size: 200MB
+      max-history: 1000
+  level:
+    root: info
+    sql: info
+    org:
+      springframework:
+        jdbc:
+          core:
+            JdbcTemplate: info
+    ru:
+      it_spectrum:
+        core:
+          filter:
+            impl: info
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+
+spectrum:
+  sec-srv-url: http://sec.main.dev.k8s.it-spectrum.ru
+  email-srv-url: http://email.main.dev.k8s.it-spectrum.ru
+  enableRestAccessControl: true

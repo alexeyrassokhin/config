@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: gpn-ui-backend
+  datasource:
+    username: gpn_dev
+    password: gpn_dev_pwd
+    url: jdbc:postgresql://192.168.44.21/gpn_dev?currentSchema=gpn
+
+server:
+  port: 8603
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+
+spectrum:
+  sub-system-code: P
